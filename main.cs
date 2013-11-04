@@ -19,4 +19,9 @@ namespace eyeProject101
             slideMenu sm = new slideMenu();
             f.Controls.Add(sm);
 
-            sm.D
+            sm.Dock = DockStyle.Fill;
+            Application.Run(f);
+        }
+    }
+}
+
