@@ -1,3 +1,8 @@
+/*
+/* Author: Simone Salvo
+*/
+
+
 using System;
 using System.Windows;
 using System.Windows.Forms;
@@ -23,8 +28,8 @@ namespace eyeProject2
         private static int clock = 50;
 
         private static Rectangle rectU = new Rectangle(Process.screenW / 2 - Process.rectW / 2, 0, Process.rectW, Process.rectH);
-        private static Rectangle rectL = new Rectangle(0, screenH / 2 - rectH / 2, rectH, rectW);
-        private static Rectangle rectR = new Rectangle(screenW - rectH, screenH/2 - rectH/2, rectH,rectW);
+        private static Rectangle rectL = new Rectangle(0, screenH / 2 - rectW / 2, rectH, rectW);
+        private static Rectangle rectR = new Rectangle(screenW - rectH, screenH/2 - rectW/2, rectH,rectW);
         private static Rectangle rectB = new Rectangle(Process.screenW / 2 - Process.rectW / 2, screenH - rectH, Process.rectW, Process.rectH);
         private static Rectangle emptyRect = new Rectangle(1,1,1,1);
 
