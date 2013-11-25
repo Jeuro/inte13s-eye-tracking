@@ -1,3 +1,4 @@
+﻿
 
 using System;
 using System.Windows;
@@ -35,6 +36,8 @@ namespace eyeProject2
 
         private int timeOffset = 0;
         private int offsetOut = 0;
+
+        public static int numberOfSide = 4;
 
         private static int timeToSelect = 2500;
         private static EyetrackCommunicator comm = new EyetrackCommunicator();
@@ -116,8 +119,8 @@ namespace eyeProject2
                     }
                     else if (timeOffset >= Process.timeToSelect)
                     {
-                        Console.WriteLine("occhio selezionato");
                         this.eyeSelected = true;
+                        
                         this.Region = new Region(menuRect);
 
                         if (this.m[(int)iSee] == null)
@@ -127,6 +130,8 @@ namespace eyeProject2
                         timeOffset = 0;
                         this.Invalidate();
                         this.Controls.Add(m[(int)iSee]);
+                        m[(int)iSee].Dock = DockStyle.Fill;
+
                     }
                     if (this.WindowState == FormWindowState.Minimized)
                         this.WindowState = FormWindowState.Maximized;
@@ -142,7 +147,6 @@ namespace eyeProject2
                 }
             }
         }
-
 
         private void whereIsEye()
         {

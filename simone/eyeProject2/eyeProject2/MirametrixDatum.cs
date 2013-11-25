@@ -1,8 +1,4 @@
-/*
-/* Author Eeva AkA Jeuro
-*/
-
-using System.Xml;
+﻿using System.Xml;
 using System.Globalization;
 using System.IO;
 using System;
@@ -20,8 +16,8 @@ namespace eyeProject2
             // Mirametrix data format: <REC FPOGX="0.000" FPOGY="0.000" FPOGS="39713.961" FPOGD="0.115" FPOGID="12443" FPOGV="0" />
             if (packet == null) 
             {
-                x = null;
-                y = null;
+                x = 0;
+                y = 0;
             }
             else 
             {

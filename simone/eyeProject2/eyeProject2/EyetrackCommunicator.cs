@@ -1,8 +1,4 @@
-/*
-/* Author Eeva akA JEuro
-*/
-
-using System.Net;
+﻿using System.Net;
 using System;
 using System.Net.Sockets;
 using System.Text;
