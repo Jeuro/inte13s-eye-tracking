@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace eyeProject2
+namespace EyeTrackingThing
 {
     class ScriptHandler
     {
-        private Dictionary<string, List<string>> scripts;
+        private Dictionary<string, string> scripts;
         private XDocument doc;
         private AutoHotkey ahk;
+
         public ScriptHandler(string file)
         {
             try
@@ -23,25 +24,18 @@ namespace eyeProject2
             }
             catch (FileNotFoundException e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine("Script file not found. " + e);
             }
         }
 
         public void ReadScripts()
         {
-            scripts = doc.Root.Elements().ToDictionary(x => (string) x.Attribute("menupos"),
-                                       x => new List<string>(
-                           x.Value.Split(new string[] { "\n" }, 
-                           StringSplitOptions.RemoveEmptyEntries)));
+            scripts = doc.Root.Elements().ToDictionary(x => (string)x.Attribute("menupos"), x => x.Value);
         }
 
-        public void Execute(string item)
+        public void Execute(string key)
         {
-            foreach (string command in scripts[item])
-            {
-                ahk.Exec(command);
-            }
+            ahk.Exec(scripts[key]);
         }
     }
-
 }

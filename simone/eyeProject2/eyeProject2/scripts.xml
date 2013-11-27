@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <scripts>
-<script menupos="l1">
-<![CDATA[
-SetTitleMatchMode 2
-WinActivate NetBeans
-Send ifelse
-Send {Tab}
-]]>
-</script>
+  <script menupos="l1">
+    <![CDATA[
+      SetTitleMatchMode 2
+      IfWinExist NetBeans
+      {
+        WinActivate NetBeans
+        Send ifelse
+        Send {Tab}
+      }
+    ]]>
+  </script>
 </scripts>
