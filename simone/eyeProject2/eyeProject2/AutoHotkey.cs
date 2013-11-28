@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eyeProject2{
+namespace eyeProject2 {
     class AutoHotkey {
         [DllImport("AutoHotkey.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode, EntryPoint = "ahktextdll")]
         private static extern IntPtr ahktextdll([MarshalAs(UnmanagedType.LPWStr)]string script,

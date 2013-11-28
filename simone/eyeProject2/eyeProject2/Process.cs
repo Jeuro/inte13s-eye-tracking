@@ -5,15 +5,13 @@ using eyeProject2;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace eyeProject2
-{
-    class Process : Form
-    {
-        public enum position : int { NONE = -1, UP = 0,LEFT=1,RIGHT=2, DOWN=3};
+namespace eyeProject2 {
+    class Process : Form {
+        public enum position : int { NONE = -1, UP = 0, LEFT = 1, RIGHT = 2, DOWN = 3 };
         public enum sel : int { NONE = 0, LEFT = 1, CENTER = 2, RIGHT = 3 };
 
         private position iSee = position.NONE;
-        private position iSaw =  position.NONE;
+        private position iSaw = position.NONE;
 
         private static bool resetMode = false;
         private bool eyeSelected = false;
@@ -30,9 +28,9 @@ namespace eyeProject2
 
         private static Rectangle rectU = new Rectangle(Process.screenW / 2 - Process.rectW / 2, 0, Process.rectW, Process.rectH);
         private static Rectangle rectL = new Rectangle(0, screenH / 2 - rectW / 2, rectH, rectW);
-        private static Rectangle rectR = new Rectangle(screenW - rectH, screenH/2 - rectW/2, rectH,rectW);
+        private static Rectangle rectR = new Rectangle(screenW - rectH, screenH / 2 - rectW / 2, rectH, rectW);
         private static Rectangle rectB = new Rectangle(Process.screenW / 2 - Process.rectW / 2, screenH - rectH, Process.rectW, Process.rectH);
-        private static Rectangle emptyRect = new Rectangle(1,1,1,1);
+        private static Rectangle emptyRect = new Rectangle(1, 1, 1, 1);
         private static Rectangle menuRect = new Rectangle(0, Process.getScreenH() / 2 - Process.getRectH() / 2, Process.getScreenW(), Process.getRectH());
 
         private int timeOffset = 0;
@@ -41,18 +39,16 @@ namespace eyeProject2
 
         private static int timeToSelect = 800;
         private static EyetrackCommunicator comm = new EyetrackCommunicator();
-        private Items[,] items = new Items[numberOfSide,eyeProject2.Menu.maxItems];
+        private Items[,] items = new Items[numberOfSide, eyeProject2.Menu.maxItems];
 
         private Image[] icons = new Image[eyeProject2.Menu.maxItems * numberOfSide];
         private MirametrixDatum data = comm.GetData();
 
-        private ScriptHandler scrpthndl = null;
+        private ScriptHandler scrpthndl;
 
         private Menu[] m = new Menu[4];
 
-        private int numItem = 4;
-        public Process()
-        {
+        public Process() {
             icons[0] = Image.FromFile(@"imgProject\Applications\Windows Media Player.png");
             icons[1] = Image.FromFile(@"imgProject\Applications\VLC Media Player.png");
             icons[2] = Image.FromFile(@"imgProject\Applications\FL Studio.png");
@@ -66,19 +62,10 @@ namespace eyeProject2
             icons[10] = Image.FromFile(@"imgProject\Applications\Live Mail.png");
             icons[11] = Image.FromFile(@"imgProject\Office Apps\OneNote 2013.png");
 
-
             this.initializeCustomItem();
-
-                try
-                {
-                    scrpthndl = new ScriptHandler("scripts.xml");
-                }
-                catch (Exception) { Console.WriteLine("ASAAAAAAAAAAAAAAAAAAAAAAA"); }
-                this.Opacity = 0.2f;
+            scrpthndl = new ScriptHandler("scripts.xml");
+            this.Opacity = 0.2f;
             Timer t = new Timer();
-
-            for (int i = 0; i < numItem; i++)
-                m[i] = null;
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.BackColor = Color.CadetBlue;
@@ -91,73 +78,59 @@ namespace eyeProject2
             t.Start();
         }
 
-        private void initializeCustomItem()
-        {
+        private void initializeCustomItem() {
             for (int i = 0; i < numberOfSide; i++)
                 for (int j = 0; j < eyeProject2.Menu.maxItems; j++)
-                    items[i, j] = new Items(icons[i*(eyeProject2.Menu.maxItems) + j]);
+                    items[i, j] = new Items(icons[i * (eyeProject2.Menu.maxItems) + j]);
         }
 
-        public static void reset()
-        {
+        public static void reset() {
             resetMode = true;
         }
 
-        public static int getScreenW()
-        {
+        public static int getScreenW() {
             if (screenH != 0)
                 return screenW;
-            else 
+            else
                 return 0;
         }
 
-        public static int getScreenH()
-        {
+        public static int getScreenH() {
             return screenH;
         }
 
-        public static int getRectW()
-        {
+        public static int getRectW() {
             return rectW;
         }
 
-        public static int getRectH()
-        {
+        public static int getRectH() {
             return rectH;
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-           base.OnPaint(e);
+        protected override void OnPaint(PaintEventArgs e) {
+            base.OnPaint(e);
         }
 
-        static void Main()
-        {
+        static void Main() {
             Process p = new Process();
             Application.Run(p);
         }
 
-        private void t_Tick(object sender, EventArgs e)
-        {
+        private void t_Tick(object sender, EventArgs e) {
             data = comm.GetData();
             if (!eyeSelected)
-                timeOffset+= Process.clock;
-            
+                timeOffset += Process.clock;
+
             this.iSaw = this.iSee;
             this.whereIsEye();
 
-            if (!eyeSelected)
-            {
-                if (this.iSee !=  position.NONE)
-                {
-                    if (this.iSee != this.iSaw)
-                    {
+            if (!eyeSelected) {
+                if (this.iSee != position.NONE) {
+                    if (this.iSee != this.iSaw) {
                         this.Visible = true;
                         this.timeOffset = 0;
                         this.Invalidate();
-                    }
-                    else if (timeOffset >= Process.timeToSelect)
-                    {
+                    } else if (timeOffset >= Process.timeToSelect) {
                         eyeSelected = true;
 
                         this.Region = new Region(menuRect);
@@ -176,17 +149,13 @@ namespace eyeProject2
                     if (this.WindowState == FormWindowState.Minimized)
                         this.WindowState = FormWindowState.Maximized;
 
-                }
-                else if (this.WindowState == FormWindowState.Maximized)
-                {
+                } else if (this.WindowState == FormWindowState.Maximized) {
                     this.WindowState = FormWindowState.Minimized;
                     timeOffset = 0;
                     this.Visible = false;
                     this.Invalidate();
                 }
-            }
-            else if (resetMode)
-            {
+            } else if (resetMode) {
                 eyeSelected = false;
                 this.WindowState = FormWindowState.Minimized;
                 this.Controls.Remove(this.m[(int)this.iSee]);
@@ -197,18 +166,15 @@ namespace eyeProject2
             }
         }
 
-        private void whereIsEye()
-        {
+        private void whereIsEye() {
             if (data.x != null)
                 this.miraX = (float)data.x * screenW;
             if (data.y != null)
                 this.miraY = (float)data.y * screenH;
 
-            if (eyeSelected)
-            {
+            if (eyeSelected) {
                 // Is inside the circle?
-                if ((miraY >= screenH / 2 - rectH / 2) && (miraY <= screenH / 2 + rectH / 2))
-                {
+                if ((miraY >= screenH / 2 - rectH / 2) && (miraY <= screenH / 2 + rectH / 2)) {
                     if (miraX <= rectW)
                         m[(int)this.iSee].selected(sel.LEFT);
                     else if (miraX <= screenW / 2 + rectW / 2)
@@ -217,14 +183,11 @@ namespace eyeProject2
                         m[(int)this.iSee].selected(sel.RIGHT);
 
                     timeOffset = 0;
-                }
-                else
-                {
+                } else {
                     timeOffset += Process.clock;
                     m[(int)this.iSee].selected(sel.NONE);
 
-                    if (timeOffset >= timeToSelect)
-                    {
+                    if (timeOffset >= timeToSelect) {
                         eyeSelected = false;
                         this.Region = new Region(emptyRect);
                         this.Controls.Remove(this.m[(int)this.iSee]);
@@ -232,37 +195,26 @@ namespace eyeProject2
                         timeOffset = 0;
                     }
                 }
-            }
-            else if (data != null)
-            {
+            } else if (data != null) {
 
-                if ((miraY <= Process.rectH) && (miraX >= (screenW/2) - (rectW/2)) && (miraX<= (screenW/2) + (rectW/2)))
-                {
+                if ((miraY <= Process.rectH) && (miraX >= (screenW / 2) - (rectW / 2)) && (miraX <= (screenW / 2) + (rectW / 2))) {
                     this.iSee = (int)position.UP;
                     if (this.iSee != this.iSaw)
-                       this.Region = new Region(Process.rectU);
-                }
-                else if ((miraY >= (screenH/2) - (rectW/2)) && (miraY <= (screenH / 2) + (rectW / 2)) && (miraX <= rectH))
-                {
-                    this.iSee =  position.LEFT;
+                        this.Region = new Region(Process.rectU);
+                } else if ((miraY >= (screenH / 2) - (rectW / 2)) && (miraY <= (screenH / 2) + (rectW / 2)) && (miraX <= rectH)) {
+                    this.iSee = position.LEFT;
                     if (this.iSee != this.iSaw)
-                         this.Region = new Region(Process.rectL);
-                }
-                else if ((miraY >= (screenH / 2) - (rectW / 2)) && (miraY <= (screenH / 2) + (rectW / 2)) && (miraX >= (screenW - rectH)))
-                {
+                        this.Region = new Region(Process.rectL);
+                } else if ((miraY >= (screenH / 2) - (rectW / 2)) && (miraY <= (screenH / 2) + (rectW / 2)) && (miraX >= (screenW - rectH))) {
                     this.iSee = position.RIGHT;
                     if (this.iSee != this.iSaw)
-                     this.Region = new Region(Process.rectR);
-                }
-                else if ((miraY >= screenH - rectH) && (miraX >= (screenW / 2) - (rectW / 2)) && (miraX <= (screenW / 2) + (rectW / 2)))
-                {
+                        this.Region = new Region(Process.rectR);
+                } else if ((miraY >= screenH - rectH) && (miraX >= (screenW / 2) - (rectW / 2)) && (miraX <= (screenW / 2) + (rectW / 2))) {
 
                     this.iSee = position.DOWN;
                     if (this.iSee != this.iSaw)
                         this.Region = new Region(Process.rectB);
-                }
-                else
-                {
+                } else {
                     this.iSee = position.NONE;
                     if (this.iSee != this.iSaw)
                         this.Region = new Region(Process.emptyRect);
