@@ -114,7 +114,7 @@
 
   <script menupos="RIGHT_LEFT" name="skype_answer">
     <![CDATA[
-      Send !{PgUp}
+      Send ^!{PgUp}
     ]]>
   </script>
 
