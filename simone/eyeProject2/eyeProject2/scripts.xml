@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <scripts>
-  <script menupos="l1">
-    <![CDATA[
-      SetTitleMatchMode 2
-      WinActivate NetBeans
-      Send ifelse
-      Send {Tab}
-    ]]>
-  </script>
-
   <script menupos="UP_LEFT">
     <![CDATA[
       IfWinExist, Windows Media Player
@@ -24,7 +15,7 @@
       }
     ]]>
   </script>
-  
+
   <script menupos="UP_CENTER">
     <![CDATA[
       SetTitleMatchMode 2
@@ -44,7 +35,7 @@
       
     ]]>
   </script>
-  
+
   <script menupos="LEFT_LEFT">
     <![CDATA[
       SetTitleMatchMode 2
@@ -58,7 +49,7 @@
 		  }
     ]]>
   </script>
-  
+
   <script menupos="LEFT_CENTER">
     <![CDATA[
       SetTitleMatchMode 2
@@ -72,7 +63,7 @@
 		  }
     ]]>
   </script>
-  
+
   <script menupos="LEFT_RIGHT">
     <![CDATA[
       SetTitleMatchMode 2
@@ -86,13 +77,13 @@
 		  }
     ]]>
   </script>
-  
+
   <script menupos="DOWN_LEFT">
     <![CDATA[
       
     ]]>
   </script>
-  
+
   <script menupos="DOWN_CENTER">
     <![CDATA[
       SetTitleMatchMode 2
@@ -106,7 +97,7 @@
       }
     ]]>
   </script>
-  
+
   <script menupos="DOWN_RIGHT">
     <![CDATA[
       SetTitleMatchMode 2
@@ -120,23 +111,59 @@
       }
     ]]>
   </script>
-  
-  <script menupos="RIGHT_LEFT">
+
+  <script menupos="RIGHT_LEFT" name="skype_answer">
     <![CDATA[
-      
+      Send !{PgUp}
     ]]>
   </script>
-  
-  <script menupos="RIGHT_CENTER">
+
+  <script menupos="RIGHT_CENTER" name="skype_hangup">
     <![CDATA[
-      
+      Send !{PgDn}
     ]]>
   </script>
-  
-  <script menupos="RIGHT_RIGHT">
+
+  <script menupos="RIGHT_RIGHT" name="skype_decline">
     <![CDATA[
-      
+      Send ^!{PgDn}
     ]]>
   </script>
-  
+
+  <script menupos="a" name="nb_fori">
+    <![CDATA[
+      SetTitleMatchMode 2
+      IfWinExist NetBeans
+      {
+        WinActivate
+        Send fori
+        Send {Tab}
+      }
+    ]]>
+  </script>
+
+  <script menupos="b" name="nb_ifelse">
+    <![CDATA[
+      SetTitleMatchMode 2
+      IfWinExist NetBeans
+      {
+        WinActivate
+        Send ifelse
+        Send {Tab}
+      }
+    ]]>
+  </script>
+
+  <script menupos="c" name="nb_trycatch">
+    <![CDATA[
+      SetTitleMatchMode 2
+      IfWinExist NetBeans
+      {
+        WinActivate
+        Send trycatch
+        Send {Tab}
+      }
+    ]]>
+  </script>
+
 </scripts>
