@@ -4,12 +4,139 @@
   <script menupos="l1">
     <![CDATA[
       SetTitleMatchMode 2
-      IfWinExist NetBeans
+      WinActivate NetBeans
+      Send ifelse
+      Send {Tab}
+    ]]>
+  </script>
+
+  <script menupos="UP_LEFT">
+    <![CDATA[
+      IfWinExist, Windows Media Player
       {
-        WinActivate NetBeans
-        Send ifelse
-        Send {Tab}
+        WinActivate
+        Send {Media_Play_Pause}
+      }
+      else
+      {
+        Run wmplayer
+        WinWait Windows Media Player
       }
     ]]>
   </script>
+  
+  <script menupos="UP_CENTER">
+    <![CDATA[
+      SetTitleMatchMode 2
+		  IfWinExist NotePad
+		  {
+			  WinActivate
+		  }
+      else
+      {
+        Run Notepad
+      }
+    ]]>
+  </script>
+
+  <script menupos="UP_RIGHT">
+    <![CDATA[
+      
+    ]]>
+  </script>
+  
+  <script menupos="LEFT_LEFT">
+    <![CDATA[
+      SetTitleMatchMode 2
+		  IfWinExist, Mozilla Firefox
+		  {
+			  WinActivate
+		  }
+		  else
+		  {
+			  Run firefox.exe "www.google.com"
+		  }
+    ]]>
+  </script>
+  
+  <script menupos="LEFT_CENTER">
+    <![CDATA[
+      SetTitleMatchMode 2
+		  if WinExist("ahk_class IEFrame")
+		  {
+			  WinActivate
+		  }
+		  else
+		  {
+			  Run iexplore.exe "www.yahoo.com"
+		  }
+    ]]>
+  </script>
+  
+  <script menupos="LEFT_RIGHT">
+    <![CDATA[
+      SetTitleMatchMode 2
+		  if WinExist("ahk_exe chrome.exe")
+		  {
+			  WinActivate
+		  }
+		  else
+		  {
+			  Run chrome.exe "www.facebook.com"
+		  }
+    ]]>
+  </script>
+  
+  <script menupos="DOWN_LEFT">
+    <![CDATA[
+      
+    ]]>
+  </script>
+  
+  <script menupos="DOWN_CENTER">
+    <![CDATA[
+      SetTitleMatchMode 2
+      if WinExist("ahk_exe wlmail.exe")
+      {
+        WinActivate
+      }
+      else
+      {
+        Run wlmail.exe
+      }
+    ]]>
+  </script>
+  
+  <script menupos="DOWN_RIGHT">
+    <![CDATA[
+      SetTitleMatchMode 2
+      if WinExist("ahk_exe ONENOTE.EXE")
+      {
+        WinActivate
+      }
+      else
+      {
+        Run ONENOTE.EXE
+      }
+    ]]>
+  </script>
+  
+  <script menupos="RIGHT_LEFT">
+    <![CDATA[
+      
+    ]]>
+  </script>
+  
+  <script menupos="RIGHT_CENTER">
+    <![CDATA[
+      
+    ]]>
+  </script>
+  
+  <script menupos="RIGHT_RIGHT">
+    <![CDATA[
+      
+    ]]>
+  </script>
+  
 </scripts>
