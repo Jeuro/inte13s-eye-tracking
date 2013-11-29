@@ -5,8 +5,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eyeProject2 {
-    class AutoHotkey {
+namespace eyeProject2
+{
+    class AutoHotkey
+    {
         [DllImport("AutoHotkey.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode, EntryPoint = "ahktextdll")]
         private static extern IntPtr ahktextdll([MarshalAs(UnmanagedType.LPWStr)]string script,
            [MarshalAs(UnmanagedType.LPWStr)]string options,
@@ -21,15 +23,18 @@ namespace eyeProject2 {
 
         private IntPtr handle;
 
-        public AutoHotkey() {
+        public AutoHotkey()
+        {
             handle = ahktextdll("", "", "");
         }
 
-        ~AutoHotkey() {
+        ~AutoHotkey()
+        {
             FreeLibrary(handle);
         }
 
-        public bool Exec(string command) {
+        public bool Exec(string command)
+        {
             return ahkExec(command);
         }
     }

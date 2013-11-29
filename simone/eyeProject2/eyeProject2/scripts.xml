@@ -6,6 +6,17 @@
       IfWinExist, Windows Media Player
       {
         WinActivate
+        Send {Media_Prev}
+        WinMinimize
+      }
+    ]]>
+  </script>
+
+  <script menupos="UP_CENTER">
+    <![CDATA[
+      IfWinExist, Windows Media Player
+      {
+        WinActivate
         Send {Media_Play_Pause}
       }
       else
@@ -13,16 +24,88 @@
         Run wmplayer
         WinWait Windows Media Player
       }
+
     ]]>
   </script>
 
-  <script menupos="UP_CENTER">
+  <script menupos="UP_RIGHT">
+    <![CDATA[
+      IfWinExist, Windows Media Player
+      {
+        WinActivate
+        Send {Media_Next}
+        WinMinimize
+      }
+    ]]>
+  </script>
+
+  <script menupos="LEFT_LEFT">
     <![CDATA[
       SetTitleMatchMode 2
-		  IfWinExist NotePad
-		  {
-			  WinActivate
-		  }
+                  IfWinExist, Mozilla Firefox
+                  {
+                          WinActivate
+                  }
+                  else
+                  {
+                          Run firefox.exe "www.google.com"
+                  }
+    ]]>
+  </script>
+
+  <script menupos="LEFT_CENTER">
+    <![CDATA[
+      SetTitleMatchMode 2
+                  if WinExist("ahk_class IEFrame")
+                  {
+                          WinActivate
+                  }
+                  else
+                  {
+                          Run iexplore.exe "www.yahoo.com"
+                  }
+    ]]>
+  </script>
+
+  <script menupos="LEFT_RIGHT">
+    <![CDATA[
+      SetTitleMatchMode 2
+                  if WinExist("ahk_exe chrome.exe")
+                  {
+                          WinActivate
+                  }
+                  else
+                  {
+                          Run chrome.exe "www.facebook.com"
+                  }
+    ]]>
+  </script>
+
+  <script menupos="DOWN_LEFT">
+    <![CDATA[
+      Send ^!{PgUp}
+    ]]>
+  </script>
+
+  <script menupos="DOWN_CENTER">
+    <![CDATA[
+      Send !{PgDn}
+    ]]>
+  </script>
+
+  <script menupos="DOWN_RIGHT">
+    <![CDATA[
+      Send ^!{PgDn}
+    ]]>
+  </script>
+
+  <script menupos="RIGHT_LEFT">
+    <![CDATA[
+      SetTitleMatchMode 2
+                  IfWinExist NotePad
+                  {
+                          WinActivate
+                  }
       else
       {
         Run Notepad
@@ -30,63 +113,15 @@
     ]]>
   </script>
 
-  <script menupos="UP_RIGHT">
+  <script menupos="RIGHT_CENTER">
     <![CDATA[
       
     ]]>
   </script>
 
-  <script menupos="LEFT_LEFT">
+  <script menupos="RIGHT_RIGHT">
     <![CDATA[
-      SetTitleMatchMode 2
-		  IfWinExist, Mozilla Firefox
-		  {
-			  WinActivate
-		  }
-		  else
-		  {
-			  Run firefox.exe "www.google.com"
-		  }
-    ]]>
-  </script>
-
-  <script menupos="LEFT_CENTER">
-    <![CDATA[
-      SetTitleMatchMode 2
-		  if WinExist("ahk_class IEFrame")
-		  {
-			  WinActivate
-		  }
-		  else
-		  {
-			  Run iexplore.exe "www.yahoo.com"
-		  }
-    ]]>
-  </script>
-
-  <script menupos="LEFT_RIGHT">
-    <![CDATA[
-      SetTitleMatchMode 2
-		  if WinExist("ahk_exe chrome.exe")
-		  {
-			  WinActivate
-		  }
-		  else
-		  {
-			  Run chrome.exe "www.facebook.com"
-		  }
-    ]]>
-  </script>
-
-  <script menupos="DOWN_LEFT">
-    <![CDATA[
-      
-    ]]>
-  </script>
-
-  <script menupos="DOWN_CENTER">
-    <![CDATA[
-      SetTitleMatchMode 2
+            SetTitleMatchMode 2
       if WinExist("ahk_exe wlmail.exe")
       {
         WinActivate
@@ -95,38 +130,6 @@
       {
         Run wlmail.exe
       }
-    ]]>
-  </script>
-
-  <script menupos="DOWN_RIGHT">
-    <![CDATA[
-      SetTitleMatchMode 2
-      if WinExist("ahk_exe ONENOTE.EXE")
-      {
-        WinActivate
-      }
-      else
-      {
-        Run ONENOTE.EXE
-      }
-    ]]>
-  </script>
-
-  <script menupos="RIGHT_LEFT" name="skype_answer">
-    <![CDATA[
-      Send ^!{PgUp}
-    ]]>
-  </script>
-
-  <script menupos="RIGHT_CENTER" name="skype_hangup">
-    <![CDATA[
-      Send !{PgDn}
-    ]]>
-  </script>
-
-  <script menupos="RIGHT_RIGHT" name="skype_decline">
-    <![CDATA[
-      Send ^!{PgDn}
     ]]>
   </script>
 

@@ -2,15 +2,19 @@
 using System.Drawing;
 
 
-namespace eyeProject2 {
-    class Items {
+namespace eyeProject2
+{
+    class Items
+    {
         private Image logo = null;
 
-        public Items(Image img) {
+        public Items(Image img)
+        {
             this.logo = img;
         }
 
-        public Image getLogo() {
+        public Image getLogo()
+        {
             return logo;
         }
     }
