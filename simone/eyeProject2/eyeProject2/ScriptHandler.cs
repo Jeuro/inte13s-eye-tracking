@@ -16,6 +16,8 @@ namespace eyeProject2
 
         public ScriptHandler(string file)
         {
+            // Initializing script and loading script file
+
             try
             {
                 ahk = new AutoHotkey();
@@ -28,10 +30,14 @@ namespace eyeProject2
             }
         }
 
+        // Reading scripts fragment to make a sequence
+
         public void ReadScripts()
         {
             scripts = doc.Root.Elements().ToDictionary(x => (string)x.Attribute("menupos"), x => x.Value);
         }
+
+        // Executing a script sequence
 
         public void Execute(string key)
         {

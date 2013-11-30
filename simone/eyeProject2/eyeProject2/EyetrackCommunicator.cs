@@ -7,15 +7,21 @@ namespace eyeProject2
 {
     public class EyetrackCommunicator
     {
+        // Declare port, host(IP) and socket
+
         private int port = 4242;
         private string host = "127.0.0.1";
         private Socket socket = null;
+
+        // Start stream socket for communication
 
         public EyetrackCommunicator()
         {
             Connect(host, port);
             StartMirametrixStream(socket);
         }
+
+        // Connect to socket
 
         public bool Connect(string ip, int port)
         {
@@ -31,6 +37,8 @@ namespace eyeProject2
             }
             return true;
         }
+
+        // Read data packets from eye tracker
 
         public MirametrixDatum GetData()
         {
@@ -51,6 +59,8 @@ namespace eyeProject2
 
             return new MirametrixDatum(data);
         }
+
+        // Start the stream socket server
 
         public static int StartMirametrixStream(Socket server)
         {

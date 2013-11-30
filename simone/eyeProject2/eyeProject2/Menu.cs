@@ -5,6 +5,8 @@ using System.Drawing;
 
 namespace eyeProject2
 {
+    // Creating a Menu as a UserControl
+
     class Menu : UserControl
     {
         private Process.position menuType = Process.position.NONE;
@@ -15,6 +17,8 @@ namespace eyeProject2
         private ScriptHandler script;
         private Process.sel sel = Process.sel.NONE;
         private Items[] items = new Items[maxItems];
+        
+        // Initialize Menu
 
         public Menu(Process.position x, ScriptHandler s, Items i1, Items i2, Items i3)
         {
@@ -47,6 +51,8 @@ namespace eyeProject2
             }
 
         }
+
+        // Selecting script a execute based to eye position
 
         private void eyeSelector(Process.sel item)
         {
@@ -120,6 +126,8 @@ namespace eyeProject2
             }
 
         }
+
+        // Setting icons and other graphic properties to menu items
 
         protected override void OnPaint(PaintEventArgs e)
         {

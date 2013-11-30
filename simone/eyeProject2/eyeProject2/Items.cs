@@ -8,10 +8,14 @@ namespace eyeProject2
     {
         private Image logo = null;
 
+        // Set icon to menu item
+
         public Items(Image img)
         {
             this.logo = img;
         }
+
+        // Return icon for menu item
 
         public Image getLogo()
         {

@@ -9,8 +9,15 @@ namespace eyeProject2
 {
     class Process : Form
     {
+        // Setting numeric values for UP, DOWN, LEFT, RIGHT positions
+
         public enum position : int { NONE = -1, UP = 0, LEFT = 1, RIGHT = 2, DOWN = 3 };
+
+        // Setting numeric values for LEFT, CENTER, RIGHT for each menu above
+
         public enum sel : int { NONE = 0, LEFT = 1, CENTER = 2, RIGHT = 3 };
+
+        // Setting initial position as None
 
         private position iSee = position.NONE;
         private position iSaw = position.NONE;
@@ -18,15 +25,23 @@ namespace eyeProject2
         private static bool resetMode = false;
         private bool eyeSelected = false;
 
+        // Getting screen width and height
+
         private static int screenW = Screen.PrimaryScreen.Bounds.Width;
         private static int screenH = Screen.PrimaryScreen.Bounds.Height;
+
+        // Setting width and height for visible rectangles
 
         private static int rectW = screenW / 3;
         private static int rectH = screenH / 3;
 
+        // Setting timer interval and initial coordinate for eye tracker
+
         private static int clock = 100;
         private float miraX = 0;
         private float miraY = 0;
+
+        // Initialize all rectanglular regions
 
         private static Rectangle rectU = new Rectangle(Process.screenW / 2 - Process.rectW / 2, 0, Process.rectW, Process.rectH);
         private static Rectangle rectL = new Rectangle(0, screenH / 2 - rectW / 2, rectH, rectW);
@@ -40,18 +55,31 @@ namespace eyeProject2
         public static int numberOfSide = 4;
 
         private static int timeToSelect = 800;
+
+        // Initialize eye tracker communicator
+
         private static EyetrackCommunicator comm = new EyetrackCommunicator();
         private Items[,] items = new Items[numberOfSide, eyeProject2.Menu.maxItems];
 
         private Image[] icons = new Image[eyeProject2.Menu.maxItems * numberOfSide];
+
+        // Get coordinate data from communicator
+
         private MirametrixDatum data = comm.GetData();
 
+        // Initilize script handler
+
         private ScriptHandler scrpthndl;
+        
+        // Initialize menu items
 
         private Menu[] m = new Menu[4];
 
         public Process()
         {
+            
+            // Icons Used
+
             icons[0] = Image.FromFile(@"imgProject\Applications\backw.png");
             icons[1] = Image.FromFile(@"imgProject\Applications\playPause.png");
             icons[2] = Image.FromFile(@"imgProject\Applications\forw.png");
@@ -66,9 +94,15 @@ namespace eyeProject2
             icons[11] = Image.FromFile(@"imgProject\Other\Reject.png");
 
             this.initializeCustomItem();
+
+            // Reading the AutoHotKey scripts
+
             scrpthndl = new ScriptHandler("scripts.xml");
+
             this.Opacity = 0.2f;
             Timer t = new Timer();
+
+            // Setting the display properties for the Form
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.BackColor = Color.CadetBlue;
@@ -76,10 +110,14 @@ namespace eyeProject2
             this.WindowState = FormWindowState.Minimized;
             this.Region = new Region(emptyRect);
 
+            // Setting the timer
+
             t.Interval = Process.clock;
             t.Tick += new EventHandler(t_Tick);
             t.Start();
         }
+
+        // Loading individual icons
 
         private void initializeCustomItem()
         {
@@ -93,6 +131,8 @@ namespace eyeProject2
             resetMode = true;
         }
 
+        // Getting Screen Width
+
         public static int getScreenW()
         {
             if (screenH != 0)
@@ -100,6 +140,8 @@ namespace eyeProject2
             else
                 return 0;
         }
+
+        // Getting Screen Height
 
         public static int getScreenH()
         {
@@ -126,6 +168,8 @@ namespace eyeProject2
             Process p = new Process();
             Application.Run(p);
         }
+
+        // Reload eye-tracker input at regular interval from timer
 
         private void t_Tick(object sender, EventArgs e)
         {
@@ -186,6 +230,8 @@ namespace eyeProject2
                 this.Invalidate();
             }
         }
+
+        // Getting the position of where the user loooks
 
         private void whereIsEye()
         {
