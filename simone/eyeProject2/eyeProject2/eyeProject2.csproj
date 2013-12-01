@@ -90,6 +90,9 @@
     <Content Include="imgProject\Applications\AutoDesk 3DS Max.png" />
     <Content Include="imgProject\Applications\Autodesk.png" />
     <Content Include="imgProject\Applications\Avast Antivirus.png" />
+    <Content Include="imgProject\Applications\backw.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Bejeweled 2.png" />
     <Content Include="imgProject\Applications\Bejeweled 3.png" />
     <Content Include="imgProject\Applications\Bejeweled Twist.png" />
@@ -118,6 +121,9 @@
     <Content Include="imgProject\Applications\FL Studio.png" />
     <Content Include="imgProject\Applications\Flipboard.png" />
     <Content Include="imgProject\Applications\Foobar.png" />
+    <Content Include="imgProject\Applications\forw.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Fraps.png" />
     <Content Include="imgProject\Applications\GIMP.png" />
     <Content Include="imgProject\Applications\GOM Player.png" />
@@ -309,7 +315,9 @@
     <Content Include="imgProject\Applications\LightWorks.png" />
     <Content Include="imgProject\Applications\Limewire alt.png" />
     <Content Include="imgProject\Applications\Limewire.png" />
-    <Content Include="imgProject\Applications\Live Mail.png" />
+    <Content Include="imgProject\Applications\Live Mail.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Live Messenger alt 1.png" />
     <Content Include="imgProject\Applications\Live Messenger alt 2.png" />
     <Content Include="imgProject\Applications\Live Messenger alt 3.png" />
@@ -336,7 +344,9 @@
     <Content Include="imgProject\Applications\Nokia Suite.png" />
     <Content Include="imgProject\Applications\Notepad alt.png" />
     <Content Include="imgProject\Applications\Notepad++.png" />
-    <Content Include="imgProject\Applications\Notepad.png" />
+    <Content Include="imgProject\Applications\Notepad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\ObjectDock.png" />
     <Content Include="imgProject\Applications\Other Antivirus Software.png" />
     <Content Include="imgProject\Applications\Paint NET.png" />
@@ -344,6 +354,9 @@
     <Content Include="imgProject\Applications\Peggle Nights.png" />
     <Content Include="imgProject\Applications\Picture Viewer.png" />
     <Content Include="imgProject\Applications\Pidgin.png" />
+    <Content Include="imgProject\Applications\playPause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\QuickTime.png" />
     <Content Include="imgProject\Applications\Rainmeter.png" />
     <Content Include="imgProject\Applications\RealPlayer.png" />
@@ -535,7 +548,9 @@
     <Content Include="imgProject\Applications\uTorrent alt.png" />
     <Content Include="imgProject\Applications\uTorrent.png" />
     <Content Include="imgProject\Applications\VirtualBox.png" />
-    <Content Include="imgProject\Applications\Visual Studio 2012.png" />
+    <Content Include="imgProject\Applications\Visual Studio 2012.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Visual Studio alt.png" />
     <Content Include="imgProject\Applications\Visual Studio.png" />
     <Content Include="imgProject\Applications\VLC Media Player.png" />
@@ -1662,7 +1677,12 @@
     <Content Include="imgProject\Other\Notifications.png" />
     <Content Include="imgProject\Other\Origins.png" />
     <Content Include="imgProject\Other\Phone alt.png" />
-    <Content Include="imgProject\Other\Phone.png" />
+    <Content Include="imgProject\Other\Phone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="imgProject\Other\Phoner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Other\Pin.png" />
     <Content Include="imgProject\Other\Power - Hibernate.png" />
     <Content Include="imgProject\Other\Power - Lock.png" />
@@ -1713,6 +1733,9 @@
     <Content Include="imgProject\Other\reflective\ZIP Archive_mirror.png" />
     <Content Include="imgProject\Other\reflective\Zoom In_mirror.png" />
     <Content Include="imgProject\Other\reflective\Zoom Out_mirror.png" />
+    <Content Include="imgProject\Other\Reject.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Other\Save.png" />
     <Content Include="imgProject\Other\Search alt.png" />
     <Content Include="imgProject\Other\Search.png" />
@@ -2169,11 +2192,15 @@
     <Content Include="imgProject\System Icons\Windows Update.png" />
     <Content Include="imgProject\Web Browsers\Comodo Dragon.png" />
     <Content Include="imgProject\Web Browsers\Firefox alt.png" />
-    <Content Include="imgProject\Web Browsers\Firefox.png" />
+    <Content Include="imgProject\Web Browsers\Firefox.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Web Browsers\Google Canary alt.png" />
     <Content Include="imgProject\Web Browsers\Google Canary.png" />
     <Content Include="imgProject\Web Browsers\Google Chrome alt.png" />
-    <Content Include="imgProject\Web Browsers\Google Chrome.png" />
+    <Content Include="imgProject\Web Browsers\Google Chrome.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Web Browsers\Google Chromium alt.png" />
     <Content Include="imgProject\Web Browsers\Google Chromium.png" />
     <Content Include="imgProject\Web Browsers\ICO\Comodo Dragon.ico" />
@@ -2200,7 +2227,9 @@
     <Content Include="imgProject\Web Browsers\Internet Explorer 10.png" />
     <Content Include="imgProject\Web Browsers\Internet Explorer 8.png" />
     <Content Include="imgProject\Web Browsers\Internet Explorer alt.png" />
-    <Content Include="imgProject\Web Browsers\Internet Explorer.png" />
+    <Content Include="imgProject\Web Browsers\Internet Explorer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Web Browsers\Maxthon.png" />
     <Content Include="imgProject\Web Browsers\Opera alt.png" />
     <Content Include="imgProject\Web Browsers\Opera.png" />
