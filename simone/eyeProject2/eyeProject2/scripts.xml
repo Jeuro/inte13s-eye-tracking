@@ -42,42 +42,36 @@
   <script menupos="LEFT_LEFT">
     <![CDATA[
       SetTitleMatchMode 2
-                  IfWinExist, Mozilla Firefox
-                  {
-                          WinActivate
-                  }
-                  else
-                  {
-                          Run firefox.exe "www.google.com"
-                  }
+      IfWinExist NetBeans
+      {
+        WinActivate
+        Send trycatch
+        Send {Tab}
+      }
     ]]>
   </script>
 
   <script menupos="LEFT_CENTER">
     <![CDATA[
       SetTitleMatchMode 2
-                  if WinExist("ahk_class IEFrame")
-                  {
-                          WinActivate
-                  }
-                  else
-                  {
-                          Run iexplore.exe "www.yahoo.com"
-                  }
+      IfWinExist NetBeans
+      {
+        WinActivate
+        Send ifelse
+        Send {Tab}
+      }
     ]]>
   </script>
 
   <script menupos="LEFT_RIGHT">
     <![CDATA[
       SetTitleMatchMode 2
-                  if WinExist("ahk_exe chrome.exe")
-                  {
-                          WinActivate
-                  }
-                  else
-                  {
-                          Run chrome.exe "www.facebook.com"
-                  }
+      IfWinExist NetBeans
+      {
+        WinActivate
+        Send fori
+        Send {Tab}
+      }
     ]]>
   </script>
 
@@ -121,7 +115,7 @@
 
   <script menupos="RIGHT_RIGHT">
     <![CDATA[
-            SetTitleMatchMode 2
+      SetTitleMatchMode 2
       if WinExist("ahk_exe wlmail.exe")
       {
         WinActivate
@@ -132,41 +126,4 @@
       }
     ]]>
   </script>
-
-  <script menupos="a" name="nb_fori">
-    <![CDATA[
-      SetTitleMatchMode 2
-      IfWinExist NetBeans
-      {
-        WinActivate
-        Send fori
-        Send {Tab}
-      }
-    ]]>
-  </script>
-
-  <script menupos="b" name="nb_ifelse">
-    <![CDATA[
-      SetTitleMatchMode 2
-      IfWinExist NetBeans
-      {
-        WinActivate
-        Send ifelse
-        Send {Tab}
-      }
-    ]]>
-  </script>
-
-  <script menupos="c" name="nb_trycatch">
-    <![CDATA[
-      SetTitleMatchMode 2
-      IfWinExist NetBeans
-      {
-        WinActivate
-        Send trycatch
-        Send {Tab}
-      }
-    ]]>
-  </script>
-
 </scripts>
