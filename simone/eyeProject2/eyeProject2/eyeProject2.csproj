@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1FE9DF76-C501-4760-A9B3-F074DE47C5E0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eyeProject2</RootNamespace>
     <AssemblyName>eyeProject2</AssemblyName>
@@ -107,6 +107,12 @@
     <Content Include="imgProject\Applications\Camstudio.png" />
     <Content Include="imgProject\Applications\Camtasia Studio.png" />
     <Content Include="imgProject\Applications\CCleaner.png" />
+    <Content Include="imgProject\Web Browsers\chface.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="imgProject\Web Browsers\chgoogle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Chuzzle.png" />
     <Content Include="imgProject\Applications\Circle Dock.png" />
     <Content Include="imgProject\Applications\Coding App.png" />
@@ -121,12 +127,16 @@
     <Content Include="imgProject\Applications\FL Studio.png" />
     <Content Include="imgProject\Applications\Flipboard.png" />
     <Content Include="imgProject\Applications\Foobar.png" />
+    <Content Include="imgProject\Applications\foriNb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\forw.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="imgProject\Applications\Fraps.png" />
     <Content Include="imgProject\Applications\GIMP.png" />
     <Content Include="imgProject\Applications\GOM Player.png" />
+    <Content Include="imgProject\Applications\Google Chrome.png" />
     <Content Include="imgProject\Applications\Google Sketchup 2012.png" />
     <Content Include="imgProject\Applications\GrooveShark.png" />
     <Content Include="imgProject\Applications\HTML5.png" />
@@ -298,6 +308,9 @@
     <Content Include="imgProject\Applications\ICO\Zuma.ico" />
     <Content Include="imgProject\Applications\ICO\Zune alt.ico" />
     <Content Include="imgProject\Applications\ICO\Zune.ico" />
+    <Content Include="imgProject\Applications\ifelseNb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Inkscape.png" />
     <Content Include="imgProject\Applications\Instagram.png" />
     <Content Include="imgProject\Applications\Internet Download Manager.png" />
@@ -542,6 +555,9 @@
     <Content Include="imgProject\Applications\Sublime Text 2.png" />
     <Content Include="imgProject\Applications\Thunderbird.png" />
     <Content Include="imgProject\Applications\Trillian.png" />
+    <Content Include="imgProject\Applications\trycatchNb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgProject\Applications\Tune-Up Utilities.png" />
     <Content Include="imgProject\Applications\UltraISO.png" />
     <Content Include="imgProject\Applications\Uninstall.png" />

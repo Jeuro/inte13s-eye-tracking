@@ -96,20 +96,31 @@
   <script menupos="RIGHT_LEFT">
     <![CDATA[
       SetTitleMatchMode 2
-                  IfWinExist NotePad
-                  {
-                          WinActivate
-                  }
+
+      IfWinExist, Facebook
+      {
+	      WinActivate
+      }
       else
       {
-        Run Notepad
+	      Run "chrome.exe" "www.facebook.com"
       }
+
     ]]>
   </script>
 
   <script menupos="RIGHT_CENTER">
     <![CDATA[
-      
+      SetTitleMatchMode 2
+
+      IfWinExist, Google
+      {
+	      WinActivate
+      }
+      else
+      {
+	      Run "chrome.exe" "www.google.com"
+      }
     ]]>
   </script>
 
