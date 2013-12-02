@@ -86,9 +86,9 @@ namespace eyeProject2
             icons[3] = Image.FromFile(@"imgProject\Web Browsers\Firefox.png");
             icons[4] = Image.FromFile(@"imgProject\Web Browsers\Internet Explorer.png");
             icons[5] = Image.FromFile(@"imgProject\Web Browsers\Google Chrome.png");
-            icons[6] = Image.FromFile(@"imgProject\Applications\Notepad.png");
-            icons[7] = Image.FromFile(@"imgProject\Applications\Visual Studio 2012.png");
-            icons[8] = Image.FromFile(@"imgProject\Applications\Live Mail.png");
+            icons[6] = Image.FromFile(@"imgProject\Applications\trycatchNb.png");
+            icons[7] = Image.FromFile(@"imgProject\Applications\ifelseNb.png");
+            icons[8] = Image.FromFile(@"imgProject\Applications\foriNb.png");
             icons[9] = Image.FromFile(@"imgProject\Other\Phone.png");
             icons[10] = Image.FromFile(@"imgProject\Other\Phoner.png");
             icons[11] = Image.FromFile(@"imgProject\Other\Reject.png");
